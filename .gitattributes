@@ -1,0 +1,12 @@
+# Automatically normalize line endings for all text-based files
+# For the following file types, normalize line endings to LF on checking and
+# prevent conversion to CRLF when they are checked out (this is required in
+# order to prevent newline related issues)
+# http://git-scm.com/docs/gitattributes#_end_of_line_conversion
+* text=auto eol=lf
+
+# For the following file types, normalize line endings to CRLF on checking and
+# prevent conversion to LF when they are checked out (this is required in
+# order to prevent newline related issues)
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf

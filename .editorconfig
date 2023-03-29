@@ -1,0 +1,15 @@
+# EditorConfig coding styles definitions. For more information about the
+# properties used in this file, please see the EditorConfig documentation:
+# http://editorconfig.org/
+
+# indicate this is the root of the project
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+tab_width = 4
+trim_trailing_whitespace = true
