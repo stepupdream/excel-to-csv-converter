@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"encoding/json"
@@ -10,8 +10,8 @@ import (
 	"github.com/stepupdream/go-support-tool/file"
 )
 
-// ConfigJson https://mholt.github.io/json-to-go/
-type ConfigJson struct {
+// Setting https://mholt.github.io/json-to-go/
+type Setting struct {
 	ExecutionType               string `json:"execution_type"`
 	ProductionCsvDirectoryPath  string `json:"production_csv_directory_path"`
 	DevelopCsvDirectoryPath     string `json:"develop_csv_directory_path"`
@@ -27,7 +27,7 @@ type ConfigJson struct {
 // Load
 // read all data from a file at once.
 // Read and return in []bytes, so Close is unnecessary.
-func load(fileName string) error {
+func Load(fileName string) error {
 	path, err := file.RecursiveFilePathInParent(fileName)
 	if err != nil {
 		return err
@@ -37,15 +37,15 @@ func load(fileName string) error {
 		return err
 	}
 
-	var configJson ConfigJson
-	if err = json.Unmarshal(config, &configJson); err != nil {
+	var setting Setting
+	if err = json.Unmarshal(config, &setting); err != nil {
 		return err
 	}
 
-	reflection := reflect.TypeOf(ConfigJson{})
+	reflection := reflect.TypeOf(Setting{})
 	for i := 0; i < reflection.NumField(); i++ {
 		field := reflection.Field(i)
-		value := reflect.Indirect(reflect.ValueOf(configJson)).FieldByName(field.Name)
+		value := reflect.Indirect(reflect.ValueOf(setting)).FieldByName(field.Name)
 		if err = setEnv(field.Name, field.Type.String(), value); err != nil {
 			return err
 		}

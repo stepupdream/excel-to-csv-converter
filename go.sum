@@ -1,0 +1,6 @@
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/stepupdream/go-support-tool v0.1.2 h1:d1W8i/nfPdGn1j3AbLzPLbv01g2h145/cq3krY1dsdY=
+github.com/stepupdream/go-support-tool v0.1.2/go.mod h1:ijkwdSZX9An3granqrWB8angIVv+ZJGV7b4pAhsMleo=
+github.com/stepupdream/golang-support-tool v0.5.0 h1:oIevfWOS+xO5BgBsQfQsgwq19/CuLvL4KOYPZHlSn/k=
+github.com/stepupdream/golang-support-tool v0.5.0/go.mod h1:XZ6SW3K0FyK0sFPCIPVjmSzoC1UPb8LHgeh5lK1fejM=
