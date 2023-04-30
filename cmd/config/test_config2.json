@@ -1,0 +1,12 @@
+{
+  "execution_type": "push",
+  "production_directory_path": "C:\\develop\\excel-to-csv-converter\\production",
+  "develop_directory_path": "C:\\develop\\excel-to-csv-converter\\develop",
+  "output_file_extension": "csv",
+  "sheet_name": "data",
+  "env_name": "dream",
+  "last_updated_time_file_path": "C:\\develop\\excel-to-csv-converter\\data_timestamps.csv",
+  "master_data_yaml_directory_path": "C:\\develop\\excel-to-csv-converter\\tables",
+  "enum_yaml_directory_path": "C:\\develop\\excel-to-csv-converter\\enum",
+  "target_version": "max"
+}
