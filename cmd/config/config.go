@@ -15,9 +15,10 @@ import (
 // Setting https://mholt.github.io/json-to-go/
 type Setting struct {
 	ExecutionType               string `json:"execution_type"`
-	ProductionCsvDirectoryPath  string `json:"production_csv_directory_path"`
-	DevelopCsvDirectoryPath     string `json:"develop_csv_directory_path"`
-	DevelopExcelDirectoryPath   string `json:"develop_excel_directory_path"`
+	ProductionDirectoryPath     string `json:"production_directory_path"`
+	DevelopDirectoryPath        string `json:"develop_directory_path"`
+	OutputFileExtension         string `json:"output_file_extension"`
+	SheetName                   string `json:"sheet_name"`
 	EnvName                     string `json:"env_name"`
 	LastUpdatedTimeFilePath     string `json:"last_updated_time_file_path"`
 	MasterDataYamlDirectoryPath string `json:"master_data_yaml_directory_path"`

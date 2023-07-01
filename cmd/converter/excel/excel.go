@@ -27,16 +27,16 @@ func GetFilePath(targetDirPath string) ([]string, error) {
 
 // verifyExcelPath Verify the Excel file path.
 func verifyExcelPath(excelFilePaths []string) error {
-	delimited := string(os.PathSeparator) + os.Getenv("OutputFileExtension")
-	productionDirectoryPath := os.Getenv("ProductionDirectoryPath") + delimited
+	pathSeparator := string(os.PathSeparator)
+	outputFileExtension := os.Getenv("OutputFileExtension")
+	productionDirectoryPath := os.Getenv("ProductionDirectoryPath") + pathSeparator + outputFileExtension
 	productionVersion := directory.MaxFileName(productionDirectoryPath)
-	developDirectoryPath := os.Getenv("DevelopDirectoryPath") + delimited
+	developExcelDirectoryPath := os.Getenv("DevelopDirectoryPath") + pathSeparator + "excel"
 
 	for _, excelFilePath := range excelFilePaths {
 		var loadType string
-		tmp := excelFilePath[len(developDirectoryPath)+1:]
+		tmp := excelFilePath[len(developExcelDirectoryPath)+1:]
 
-		pathSeparator := string(os.PathSeparator)
 		if strings.Contains(excelFilePath, pathSeparator+"env"+pathSeparator) {
 			loadType = strings.Split(tmp, pathSeparator)[2]
 			if !array.Contains([]string{"insert", "update", "delete"}, loadType) {
